@@ -1,0 +1,45 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)">
+    <mat-toolbar class="mat-elevation-z2" style="background-color:#5B7CFF; border:0; text-color:#fff;"><span class="title-center">TITLE</span></mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="/"><mat-icon>dashboard</mat-icon> Dashboard</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item href="/users"><mat-icon>people</mat-icon> Users</a>
+      <a mat-list-item href="#"></a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="mat-elevation-z2" style="background-color:#5B7CFF; text-color:#fff;">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      
+    </mat-toolbar>
+    <mat-toolbar>
+      <input [(ngModel)]="message" />
+      <button (click)="sendMessage()">Send</button>
+      <div>Message: {{ msg }}</div>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+    <!-- Add Content Here -->
+    <span [class.selected]='docId === currentDocId' (click)='loadDoc(docId)' *ngFor='let docId of documents | async'> dasfadsf {{ docId }}</span>
+    <button (click)='newDoc()'>New Document</button>
+    
+    <mat-toolbar style="background-color:#fff; bottom:0;">
+      
+
+        <footer style="background-color:#fff;">
+            <!-- Your sticky footer with a variable height. -->
+            
+        </footer>
+    </mat-toolbar>
+  </mat-sidenav-content>
+</mat-sidenav-container>
