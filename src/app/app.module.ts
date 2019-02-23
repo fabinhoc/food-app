@@ -19,6 +19,7 @@ import { UserListComponent } from './users/user-list/user-list.component';
 
 import { UserService } from './services/users/user.service';
 import { SocketDocumentService } from './services/socket/socket-document.service';
+import { LoginComponent } from './login/login.component';
 
 // const config: SocketIoConfig = {url: 'http://localhost:4000/api', options: {} };
 
@@ -28,7 +29,8 @@ import { SocketDocumentService } from './services/socket/socket-document.service
     MainNavComponent,
     MainDashComponent,
     UsersComponent,
-    UserListComponent
+    UserListComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
